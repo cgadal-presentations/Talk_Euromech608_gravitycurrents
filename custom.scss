@@ -1,0 +1,90 @@
+// /*-- scss:defaults --*/
+
+// $body-bg: #191919;
+// $body-color: #fff;
+// $link-color: #42affa;
+
+/*-- scss:rules --*/
+
+// .reveal .slide blockquote {
+//   border-left: 3px solid $text-muted;
+//   padding-left: 0.5em;
+// }
+
+// .reveal section {
+//     border: 2px solid red
+//   }
+
+.reveal .columns>.column:last-child> :not(ul, ol) {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.reveal .r-stack>* {
+    grid-area: 1/1;
+    margin: inherit
+}
+
+.reveal .slides ul ul {
+    list-style-type: circle;
+    font-size: 85%;
+}
+
+.reveal .slides figcaption {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.reveal .slides h2 {
+    margin: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.reveal .slides .important {
+    text-align: center;
+    margin: 3%;
+    font-weight: bolder;
+}
+
+.reveal .slides .small {
+    font-size: smaller;
+}
+
+.reveal .slides .boxed {
+    border: 2px solid #eb7f19;
+    padding: 20px;
+}
+
+.reveal .slides .colored {
+    color: #eb7f19;
+}
+
+.reveal .slides div.centered-block {
+    display: flex;
+    justify-content: center;
+}
+
+.container-hv-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.v-center-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+#nomargin {
+    margin-top: 0;
+}
+
+#needbackground {
+    background-color: white;
+}

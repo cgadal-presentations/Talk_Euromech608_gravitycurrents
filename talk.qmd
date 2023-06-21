@@ -1,0 +1,417 @@
+---
+title: "Slumping regime in lock-release turbidity currents"
+subtitle: "Bottom slope and particle settling"
+author: "C. Gadal, M. Mercier and L. Lacaze"
+institute: "Institut de Mécanique des Fluides de Toulouse (IMFT), France"
+format:
+  revealjs:
+    theme: [black, custom.scss]
+    width: 1920
+    height: 1080
+    callout-icon: false
+    slide-number: true
+    auto-stretch: false
+    template-partials:
+      - title-slide.html
+    include-in-header: 
+      text: |
+        <style>
+        .center-xy {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translateY(-50%), translateX(-50%);
+          transform: translateY(-50%), translateX(-50%);
+        }
+        </style>
+---
+
+## Turbidity currents
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+- gravity driven flow
+- excess density = suspended particles (maybe combined to temperature, salinity or humidity differences)
+
+::: {layout="[[1.005, 1.275, 1.303]]"}
+
+![Snow avalanche, Zinal, Switzerland @Zacharie Grossen](talk_files/src/intro/avalanche.png)
+
+![Pyroclastic flow, Sinabung, Indonesia @Jean-Guillaume Feignon](talk_files/src/intro/pyroclastic.png)
+
+![Dust storm, Phoenix, USA @Alan Stark](talk_files/src/intro/duststorm.png)
+
+
+:::
+
+:::
+::::
+
+## Lock-release systems
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![](talk_files/src/figures/Sketch_lock_release.svg){width=80% fig-align="center" #needbackground}
+
+:::
+::::
+
+## Lock-release systems
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![Particles: glass beads ($d \sim 60 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/videos/video_lock_release.mp4){width=85% fig-align="center"}
+
+:::
+::::
+
+## Front position
+
+:::: {.columns .v-center-container}
+
+::: {.column width=50%}
+
+![Rottman et al. 1983, saline water, no slope ($\theta=0^\circ$)](talk_files/src/figures/Rottman1983.svg){width=100%}
+
+:::
+
+::: {.column width=5%}
+:::
+
+::: {.column width=45%}
+
+- length: $L_{0}$ (lock length)
+- velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
+- time: $t_{0} = L_{0}/u_{0}$
+
+::: {.fragment style="color:#eb7f19"}
+- $u_{\rm c} = \mathcal{F}_{r} u_{0}$, $t_{\rm end} = \tau t_{0}$
+- constant prefactors: $\mathcal{F}_{r} = 0.5$, $\tau \simeq 20$
+  - (Boussinesq, full depth-release)
+:::
+
+::: {.fragment .important .boxed}
+- What happens for an inclined tank ?
+- Influence of particles ?
+
+$$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
+:::
+
+:::
+
+::::
+
+## Experimental set-up and parameter range (170 runs)
+
+:::: {.columns}
+
+::: {.column width=60%}
+![](talk_files/src/figures/Sketch_lock_release.svg){width=100% fig-align="center"}
+:::
+
+::: {.column width=40%}
+
+**Parameter space:**
+
+- volume fraction, $\phi \in [0.5, 15]~\%$
+  + excess density, $\delta\rho \in [2, 500]~\textrm{kg}~\textrm{m}^{-3}$ 
+  + velocity scale, $u_{0} \in [5, 10^{2}]~\textrm{cm}~\textrm{s}^{-1}$ 
+- bottom slope, $\theta \in [0, 7]^\circ$
+- silica particles, $d \in [60, 250]~\mu$m
+  - settling velocity, $v_{\rm s} \in [0.3, 3]~\textrm{cm}~\textrm{s}^{-1}$
+  + saline currents (same $\delta\rho$) 
+
+:::
+::::
+
+**Dimensionless control parameters:**
+
+:::: {.columns}
+::: {.column width=50%}
+
+- Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]$
+- Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]$
+- Froude, $\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1$
+
+:::
+
+::: {.column width=50%}
+
+- $\theta \in [0, 7]^\circ$
+- $\phi$
+- $\delta\rho/\rho$
+
+:::
+::::
+
+## Experimental set-up and parameter range (170 runs)
+
+:::: {.columns}
+
+::: {.column width=60%}
+![](talk_files/src/figures/Sketch_lock_release.svg){width=100% fig-align="center"}
+:::
+
+::: {.column width=40%}
+
+**Parameter space:**
+
+- volume fraction, $\phi \in [0.5, 15]~\%$
+  + excess density, $\delta\rho \in [2, 500]~\textrm{kg}~\textrm{m}^{-3}$ 
+  + velocity scale, $u_{0} \in [5, 10^{2}]~\textrm{cm}~\textrm{s}^{-1}$ 
+- bottom slope, $\theta \in [0, 7]^\circ$
+- silica particles, $d \in [60, 250]~\mu$m
+  - settling velocity, $v_{\rm s} \in [0.3, 3]~\textrm{cm}~\textrm{s}^{-1}$
+  + saline currents (same $\delta\rho$) 
+
+:::
+::::
+
+**Dimensionless control parameters:**
+
+:::: {.columns}
+::: {.column width=50%}
+
+- [Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]$]{.colored}
+- [Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]$]{.colored}
+- Froude, $\require{cancel} \xcancel{\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1}$
+
+:::
+
+::: {.column width=50%}
+
+- [$\theta \in [0, 7]^\circ$]{.colored}
+- $\require{cancel} \xcancel{\phi}$ $\rightarrow$ $\phi < \phi_{\rm c} \simeq 0.45~\%$, no interparticle interactions
+- $\require{cancel} \xcancel{\delta\rho/\rho}$ $\rightarrow$ Boussinesq approx.
+
+:::
+::::
+
+## Front dynamics
+
+::: {.r-stack}
+
+![](talk_files/src/figures/nose_positions_0.svg){width=80% fig-align="center"}
+
+![](talk_files/src/figures/nose_positions_1.svg){.fragment width=80% fig-align="center"}
+
+![](talk_files/src/figures/nose_positions_2.svg){.fragment width=80% fig-align="center"}
+
+:::
+
+## Front velocity
+
+::: {.r-stack}
+
+![](talk_files/src/figures/figure_scaling_velocity_0.svg){width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_scaling_velocity_1.svg){.fragment fragment-index=1 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_scaling_velocity_2.svg){.fragment fragment-index=2 width=80% fig-align="center"}
+
+<!-- ![](talk_files/src/figures/figure_scaling_velocity_3.svg){.fragment fragment-index=3 width=80% fig-align="center"} -->
+
+![](talk_files/src/figures/figure_scaling_velocity_4.svg){.fragment fragment-index=3 width=80% fig-align="center"}
+
+:::
+
+<!-- ::: {.fragment .important .boxed} -->
+
+::: {.r-stack}
+
+[$$\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$$]{.fragment .fade-out fragment-index=1}
+
+[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$$]{.fragment .fade-in-then-out fragment-index=1}
+
+[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)$$]{.fragment .fade-in-then-out fragment-index=2}
+
+[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})$$]{.fragment .fade-in fragment-index=3}
+
+:::
+
+<!-- ::: -->
+
+
+## Front velocity
+
+::: {.r-stack}
+
+![](talk_files/src/figures/figure_froude_theta_0.svg){width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_froude_theta_1.svg){.fragment width=80% fig-align="center"}
+
+<!-- ![](talk_files/src/figures/figure_froude_theta_2.svg){.fragment width=80% fig-align="center"} -->
+
+:::
+
+
+<!-- :::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![](talk_files/src/figures/nose_positions_0.svg){width=80% fig-align="center"}
+
+
+:::
+:::: -->
+
+
+
+<!-- ## Latest: particle byoyancy in steady influx turbidity currents
+
+:::: {.columns .v-center-container}
+::: {.column width=52%}
+
+![Steady injection of a suspension of plastic particles.](talk_files/src/steady_influx_sed.svg){width=100% fig-align="center"}
+
+:::
+
+::: {.column width=48%}
+
+![Steady injection of a mix (plastic particles + saline water) in freshwater.](talk_files/src/parti_distrib_JEAN.svg){width=100% fig-align="center"}
+
+:::
+::::
+
+
+## Front position
+
+:::: {.columns .v-center-container}
+
+::: {.column width=50%}
+
+![Rottman et al. 1983, saline water, no slope ($\theta=0^\circ$)](talk_files/src/Rottman1983.svg){width=100%}
+
+:::
+
+::: {.column width=10%}
+:::
+
+::: {.column width=40%}
+
+
+- length: $L_{0}$ (lock length)
+- velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
+- time: $t_{0} = L_{0}/u_{0}$
+
+::: {.fragment style="color:#eb7f19"}
+- $u_{\rm c} \simeq 0.5 u_{0}$
+- $t_{\rm end} \simeq 20 t_{0}$
+- Prefactors constant
+:::
+
+::: {.fragment .important .boxed}
+What happens for an inclined tank ?
+:::
+
+:::
+
+::::
+
+
+## The influence of the slope (Birman et al. 2007)
+
+:::: {.columns .v-center-container}
+::: {layout="[[1, -0.1, 1.11]]"}
+
+![Sketch of the numerical set-up](talk_files/src/Birman2007/sketch.svg){width=2000 fig-align="center"}
+
+![Snapshot of numerical simulation ($\theta=30^\circ$)](talk_files/src/Birman2007/simu_ex.svg){width=2000 fig-align="center"}
+
+:::
+::::
+
+
+## The influence of the slope (Birman et al. 2007)
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![[Constant-velocity regime still observed for $\theta > 0^\circ$]{.colored}](talk_files/src/Birman2007/velocity_time.svg){width=50% fig-align="center"}
+
+:::
+::::
+
+## The influence of the slope (Birman et al. 2007)
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![[Slope-induced acceleration matters after $t_{*} \propto 4 \displaystyle\frac{t_{0}}{\sin\theta}$]{.colored}](talk_files/src/Birman2007/time_theta.svg){width=50% fig-align="center"}
+
+:::
+::::
+
+## The influence of the slope (Birman et al. 2007)
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![[But still, the velocity in the constant-velocity regime depends on $\theta$]{.colored}](talk_files/src/Birman2007/velocity_theta.svg){width=50% fig-align="center"}
+
+:::
+::::
+
+## First problem: Slope effect or no slope effect
+
+::: {.important .boxed}
+Slope-induced acceleration needs $t_{*}$ to matter but velocity in slumping constant-velocity regime still depends on slope.
+:::
+
+- importantce of the early transient regime ?
+
+![Adapted from Cantero et al. 2007](talk_files/src/Cantero2007/velocity_pos.svg){width=30% fig-align="center"}
+
+
+## Second Problem: matching datasets
+
+::: {.r-stack}
+![](talk_files/src/slope_datasets/figure_slope_0.svg){height="800" fig-align="center"}
+
+![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center" .fragment}
+
+:::
+
+## Second Problem: matching datasets
+
+![Bonometti et al. 2011 ($\lambda = L_{0}/h_{0}$)](talk_files/src/Bonometti2011.svg){height="800" fig-align="center"}
+
+## Second Problem: matching datasets
+
+::: {.r-stack}
+![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center"}
+
+![](talk_files/src/slope_datasets/figure_slope_0_ratio.svg){height="800" fig-align="center" .fragment}
+
+![](talk_files/src/slope_datasets/figure_slope_1_ratio.svg){height="800" fig-align="center" .fragment}
+:::
+
+## Conclusion -- lock-aspect-ratio and early transient regime
+
+- slope-induced acceleration occurs after a time $t_{*}$ **but** current velocity $u_{\rm c}/u_{0}$ before that depends on $\theta$
+
+- Different datasets for $u_{\rm c}/u_{0}$ still scattered
+
+::: {style="text-align:center"}
+{{< fa arrow-down size=3x >}} 
+:::
+
+:::: {.columns}
+
+::: {.column width=50%}
+
+- dynamics during the transient early regime ? 
+- vertical acceleration, interface shear, dissipation ?
+- influence of lock geometry and slope ?
+
+:::
+
+::: {.column width=50%}
+
+![Early transient regime of slumping (Cantero et al. 2007)](talk_files/src/Cantero2007/slumping.svg){width=70% fig-align="center"}
+:::
+
+:::: -->

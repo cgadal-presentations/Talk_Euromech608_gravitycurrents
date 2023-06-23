@@ -64,7 +64,7 @@ format:
 :::: {.columns .v-center-container}
 ::: {.column width=100%}
 
-![Particles: glass beads ($d \sim 60 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/videos/video_lock_release.mp4){width=85% fig-align="center"}
+![Particles: glass beads ($d \sim 120 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/videos/sand80m/run03/output.mp4){width=85% fig-align="center"}
 
 :::
 ::::
@@ -133,9 +133,9 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 :::: {.columns}
 ::: {.column width=50%}
 
-- Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]$
-- Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]$
-- Froude, $\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1$
+- Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [10^{4}, 10^{5}]$
+- Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{-3}, 10^{-1}]$
+- Froude, $\mathcal{F}_{r}^{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1$
 
 :::
 
@@ -176,9 +176,9 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 :::: {.columns}
 ::: {.column width=50%}
 
-- [Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]$]{.colored}
-- [Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]$]{.colored}
-- Froude, $\require{cancel} \xcancel{\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1}$
+- [Reynolds, $\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 4.10^{5}]$]{.colored}
+- [Settling, $\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{-3}, 10^{-1}]$]{.colored}
+- Froude, $\require{cancel} \xcancel{\mathcal{F}_{r}^{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1}$
 
 :::
 
@@ -203,7 +203,7 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 
 :::
 
-## Front velocity
+## Dimensionless front velocity $\mathcal{F}_{r}$
 
 ::: {.r-stack}
 
@@ -219,8 +219,6 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 
 :::
 
-<!-- ::: {.fragment .important .boxed} -->
-
 ::: {.r-stack}
 
 [$$\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$$]{.fragment .fade-out fragment-index=1}
@@ -233,185 +231,155 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 
 :::
 
-<!-- ::: -->
 
-
-## Front velocity
+## Dimensionless front velocity $\mathcal{F}_{r}(\theta)$
 
 ::: {.r-stack}
 
 ![](talk_files/src/figures/figure_froude_theta_0.svg){width=80% fig-align="center"}
 
-![](talk_files/src/figures/figure_froude_theta_1.svg){.fragment width=80% fig-align="center"}
+![](talk_files/src/figures/figure_froude_theta_1.svg){.fragment fragment-index=1 width=80% fig-align="center"}
 
 <!-- ![](talk_files/src/figures/figure_froude_theta_2.svg){.fragment width=80% fig-align="center"} -->
 
 :::
 
-
-<!-- :::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![](talk_files/src/figures/nose_positions_0.svg){width=80% fig-align="center"}
+[$\bullet$ Global increasing trend, but scatter across datasets $\rightarrow$ influence of other parameters ? $h_{0}/L_{0}$ ?]{.fragment fragment-index=1}
 
 
-:::
-:::: -->
+## Influence of settling, $S$
 
+$\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
-
-<!-- ## Latest: particle byoyancy in steady influx turbidity currents
-
-:::: {.columns .v-center-container}
-::: {.column width=52%}
-
-![Steady injection of a suspension of plastic particles.](talk_files/src/steady_influx_sed.svg){width=100% fig-align="center"}
-
-:::
-
-::: {.column width=48%}
-
-![Steady injection of a mix (plastic particles + saline water) in freshwater.](talk_files/src/parti_distrib_JEAN.svg){width=100% fig-align="center"}
-
-:::
-::::
-
-
-## Front position
-
-:::: {.columns .v-center-container}
+:::: {.columns .v-center-container style="height:80%"}
 
 ::: {.column width=50%}
 
-![Rottman et al. 1983, saline water, no slope ($\theta=0^\circ$)](talk_files/src/Rottman1983.svg){width=100%}
+![$d \sim 60~\mu$m, $\mathcal{S} = 0.01$](talk_files/src/videos/silibeads40m_70m/run02/output.mp4){width=80% fig-align="center"}
+
+![$d \sim 135~\mu$m, $\mathcal{S} = 0.04$](talk_files/src/videos/silibeads120m/run02/output.mp4){width=80% fig-align="center"}
+
+![$d \sim 250~\mu$m, $\mathcal{S} = 0.1$](talk_files/src/videos/silibeads200m_300m/run02/output.mp4){width=80% fig-align="center"}
 
 :::
 
-::: {.column width=10%}
-:::
+::: {.column width=50%}
 
-::: {.column width=40%}
-
-
-- length: $L_{0}$ (lock length)
-- velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
-- time: $t_{0} = L_{0}/u_{0}$
-
-::: {.fragment style="color:#eb7f19"}
-- $u_{\rm c} \simeq 0.5 u_{0}$
-- $t_{\rm end} \simeq 20 t_{0}$
-- Prefactors constant
-:::
-
-::: {.fragment .important .boxed}
-What happens for an inclined tank ?
-:::
+![](talk_files/src/figures/settling_velocity_nose_propagation.svg){.fragment fragment-index=1 width=100% fig-align="center"}
 
 :::
 
 ::::
 
+## Slumping regime duration, $t_{\rm end}$
 
-## The influence of the slope (Birman et al. 2007)
+[$\bullet$ Dimensionless by settling time $t_{\rm s} = h_{0}/v_{\rm s}$]{.fragment fragment-index=4}
 
-:::: {.columns .v-center-container}
-::: {layout="[[1, -0.1, 1.11]]"}
-
-![Sketch of the numerical set-up](talk_files/src/Birman2007/sketch.svg){width=2000 fig-align="center"}
-
-![Snapshot of numerical simulation ($\theta=30^\circ$)](talk_files/src/Birman2007/simu_ex.svg){width=2000 fig-align="center"}
-
-:::
-::::
-
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
+:::: {.columns .v-center-container style="height:70%"}
 ::: {.column width=100%}
-
-![[Constant-velocity regime still observed for $\theta > 0^\circ$]{.colored}](talk_files/src/Birman2007/velocity_time.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![[Slope-induced acceleration matters after $t_{*} \propto 4 \displaystyle\frac{t_{0}}{\sin\theta}$]{.colored}](talk_files/src/Birman2007/time_theta.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![[But still, the velocity in the constant-velocity regime depends on $\theta$]{.colored}](talk_files/src/Birman2007/velocity_theta.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## First problem: Slope effect or no slope effect
-
-::: {.important .boxed}
-Slope-induced acceleration needs $t_{*}$ to matter but velocity in slumping constant-velocity regime still depends on slope.
-:::
-
-- importantce of the early transient regime ?
-
-![Adapted from Cantero et al. 2007](talk_files/src/Cantero2007/velocity_pos.svg){width=30% fig-align="center"}
-
-
-## Second Problem: matching datasets
 
 ::: {.r-stack}
-![](talk_files/src/slope_datasets/figure_slope_0.svg){height="800" fig-align="center"}
 
-![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center" .fragment}
+![](talk_files/src/figures/figure_duration_0.svg){width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_1.svg){.fragment fragment-index=1 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_2.svg){.fragment fragment-index=2 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_3.svg){.fragment fragment-index=3 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_4.svg){.fragment fragment-index=4 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_5.svg){.fragment fragment-index=5 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_6.svg){.fragment fragment-index=6 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_7.svg){.fragment fragment-index=7 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_duration_8.svg){.fragment fragment-index=8 width=80% fig-align="center"}
 
 :::
 
-## Second Problem: matching datasets
+:::
+::::
 
-![Bonometti et al. 2011 ($\lambda = L_{0}/h_{0}$)](talk_files/src/Bonometti2011.svg){height="800" fig-align="center"}
+## Mixing and water entrainment
 
-## Second Problem: matching datasets
+:::: {.columns .v-center-container style="height:70%"}
+::: {.column width=100%}
+
+![from Wilson et al. 2016](talk_files/src/figures/sketch_entrainment_wilson2017.svg){width=80% fig-align="center"}
+
+</br>
+
+::: {.fragment style='text-align:center'}
+
+[Entrainment coefficient, $E = \displaystyle\frac{w_{\rm e}}{U}$]{.boxed}
+
+:::
+
+:::
+::::
+
+## Entrainment coefficient, $E = f(\mathcal{R}_{e})$
+
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
 
 ::: {.r-stack}
-![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center"}
 
-![](talk_files/src/slope_datasets/figure_slope_0_ratio.svg){height="800" fig-align="center" .fragment}
+![](talk_files/src/figures/figure_entrainment_0.svg){width=80% fig-align="center"}
 
-![](talk_files/src/slope_datasets/figure_slope_1_ratio.svg){height="800" fig-align="center" .fragment}
+![](talk_files/src/figures/figure_entrainment_1.svg){.fragment fragment-index=1 width=80% fig-align="center"}
+
+![](talk_files/src/figures/figure_entrainment_2.svg){.fragment fragment-index=2 width=80% fig-align="center"}
+
 :::
 
-## Conclusion -- lock-aspect-ratio and early transient regime
-
-- slope-induced acceleration occurs after a time $t_{*}$ **but** current velocity $u_{\rm c}/u_{0}$ before that depends on $\theta$
-
-- Different datasets for $u_{\rm c}/u_{0}$ still scattered
-
-::: {style="text-align:center"}
-{{< fa arrow-down size=3x >}} 
 :::
+::::
+
+## In a nutshell
 
 :::: {.columns}
 
 ::: {.column width=50%}
 
-- dynamics during the transient early regime ? 
-- vertical acceleration, interface shear, dissipation ?
-- influence of lock geometry and slope ?
+::: {.boxed}
+
+Slumping regime:
+
+- dimensionless velocity $\mathcal{F}_{r}$ increases with $\theta$
+- duration $t_{\rm end}$:
+  - $t_{\rm end} \propto t_{0} = L_{0}/u_{0}$ for $\mathcal{S} < 2.10^{-2}$ 
+  - $t_{\rm end} \propto t_{s} = h_{0}/v_{\rm s}$ for $\mathcal{S} > 2.10^{-2}$ 
+- entrainment increases with Reynolds as $E \propto \mathcal{R}_{e}$
 
 :::
 
-::: {.column width=50%}
-
-![Early transient regime of slumping (Cantero et al. 2007)](talk_files/src/Cantero2007/slumping.svg){width=70% fig-align="center"}
 :::
 
-:::: -->
+::: {.column width=5%}
+
+:::
+
+::: {.column width=45% .fragment}
+
+What's next ?
+
+- Comparison with depth-averaged models
+- Influence of lock aspect-ratio $h_{0}/L_{0}$ ?
+- Influence of $\theta$ and $\mathcal{S}$ on $E$ ?
+
+</br>
+
+- Moving towards steady influx turbidity currents
+
+:::
+
+::::
+
+::: {.fragment style="margin-top:4%"}
+![Steady injection of a water/plastic suspension inside fresh water.](talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4){width=85% fig-align="center"}
+::: 

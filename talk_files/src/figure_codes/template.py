@@ -1,21 +1,16 @@
-import os
 import numpy as np
 import cmocean as cmo
 import cmasher as cma
 from cycler import cycler
 import matplotlib.pyplot as plt
-import matplotlib.style as style
-from matplotlib import rcParams
 from scipy.constants import golden
-# \the\textwidth
-
 
 # %%
-# Default parameters (matplotlib.rcParams)
+# Default parameters (plt.rcParams)
 # -------------------------------------
-style.use('tableau-colorblind10')
+plt.style.use('./quarto.mplstyle')
 
-# reset matplotlib to default
+# reset plt to default
 # rcParams.update(rcParamsDefault)  # reset
 
 # constants
@@ -26,19 +21,10 @@ regular_aspect_ratio = 1/golden
 #   Figure size
 ########################################
 
-text_width = 384.  # en pt
-text_width = text_width*0.35136*0.1*inches_per_cm  # inches
+fig_width = 5.84
+fig_size = np.array([1, regular_aspect_ratio])*fig_width
 
-regular_figure_width = 0.75*text_width
-large_figure_width = .99*text_width
-
-regular_figure_size = np.array([1, regular_aspect_ratio])*regular_figure_width
-large_figure_size = np.array([1, regular_aspect_ratio])*large_figure_width
-
-graphical_abstract_figure_size = np.array([6, 5])  # cm
-graphical_abstract_figure_size = graphical_abstract_figure_size*inches_per_cm  # inches
-
-rcParams['figure.figsize'] = regular_figure_size
+plt.rcParams['figure.figsize'] = fig_size
 
 # ########################################
 # #   colors
@@ -73,36 +59,21 @@ colors = {
     'silibeads200m_300m': 'tab:purple'
 }
 
-# ########################################
-# #   font properties
-# ########################################
-#
-# rcParams['mathtext.fontset'] = 'stix'
-# rcParams['font.family'] = 'STIXGeneral'
-# rcParams['text.usetex'] = True
-# rcParams['text.latex.preamble'] = [r"\usepackage{amsmath}", r"\usepackage{amssymb}"]
-# rcParams['font.size'] = 9  # default 12
+# # ####
 
-# ########################################
-# #   tick properties
-# ########################################
-#
-# rcParams['xtick.direction'] = 'in'  # ticks pointing insid the figure
-# rcParams['ytick.direction'] = 'in'
-# rcParams['ytick.right'] = 'True'
-# rcParams['xtick.top'] = 'True'
+# plt.rcParams['mathtext.fontset'] = 'cm'
+# plt.rcParams['font.family'] = 'sans-serif'
+# # plt.rcParams['font.sans-serif'] = 'StixGeneral'
+# plt.rcParams['font.sans-serif'] = 'Roboto'
 
-# ########################################
-# #   constrained_layout properties
-# ########################################
-#
-# rcParams['figure.constrained_layout.h_pad']: 0.015
-# rcParams['figure.constrained_layout.hspace']: 0.15
-# rcParams['figure.constrained_layout.wspace']: 0.15
-# rcParams['figure.constrained_layout.w_pad']: 0.015
-#
-# ########################################
-# #   other properties
-# ########################################
-# rcParams['savefig.dpi']: 300
-# rcParams['figure.dpi']: 300
+# plt.rcParams['font.size'] = 10  # default 12
+
+# plt.rcParams['xtick.direction'] = 'in'
+# plt.rcParams['ytick.direction'] = 'in'
+# plt.rcParams['ytick.right'] = 'True'
+# plt.rcParams['xtick.top'] = 'True'
+
+# plt.rcParams['xtick.major.size'] = 2.5  # default is 3.5
+# plt.rcParams['xtick.major.width'] = 0.8  # default is 0.8
+# plt.rcParams['ytick.major.size'] = 2.5  # default is 3.5
+# plt.rcParams['ytick.major.width'] = 0.8  # default is 0.8

@@ -399,8 +399,8 @@
 <div class="column" style="width:100%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><video data-src="talk_files/src/videos/video_lock_release.mp4" style="width:85.0%" controls=""><a href="talk_files/src/videos/video_lock_release.mp4">Video</a></video></p>
-<p></p><figcaption>Particles: glass beads (<span class="math inline">\(d \sim 60 \mu\)</span>m). Ambient: fresh water. Inclination: <span class="math inline">\(\theta = 7^\circ\)</span></figcaption><p></p>
+<p><video data-src="talk_files/src/videos/sand80m/run03/output.mp4" style="width:85.0%" controls=""><a href="talk_files/src/videos/sand80m/run03/output.mp4">Video</a></video></p>
+<p></p><figcaption>Particles: glass beads (<span class="math inline">\(d \sim 120 \mu\)</span>m). Ambient: fresh water. Inclination: <span class="math inline">\(\theta = 7^\circ\)</span></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -473,9 +473,9 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Reynolds, <span class="math inline">\(\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]\)</span></li>
-<li>Settling, <span class="math inline">\(\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]\)</span></li>
-<li>Froude, <span class="math inline">\(\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1\)</span></li>
+<li>Reynolds, <span class="math inline">\(\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [10^{4}, 10^{5}]\)</span></li>
+<li>Settling, <span class="math inline">\(\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{-3}, 10^{-1}]\)</span></li>
+<li>Froude, <span class="math inline">\(\mathcal{F}_{r}^{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1\)</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
@@ -516,9 +516,9 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><span class="colored">Reynolds, <span class="math inline">\(\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 12.10^{5}]\)</span></span></li>
-<li><span class="colored">Settling, <span class="math inline">\(\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{2}, 10^{1}]\)</span></span></li>
-<li>Froude, <span class="math inline">\(\require{cancel} \xcancel{\mathcal{F}_{r}_{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1}\)</span></li>
+<li><span class="colored">Reynolds, <span class="math inline">\(\mathcal{R}_{e} = u_{0}h_{0}/\nu \in [2.10^{4}, 4.10^{5}]\)</span></span></li>
+<li><span class="colored">Settling, <span class="math inline">\(\mathcal{S} = v_{\rm s}/u_{0} \in [4.10^{-3}, 10^{-1}]\)</span></span></li>
+<li>Froude, <span class="math inline">\(\require{cancel} \xcancel{\mathcal{F}_{r}^{*} = u_{0}/\sqrt{g'h_{0}} \equiv 1}\)</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
@@ -549,8 +549,8 @@
 </div>
 </div>
 </section>
-<section id="front-velocity" class="slide level2">
-<h2>Front velocity</h2>
+<section id="dimensionless-front-velocity-mathcalf_r" class="slide level2">
+<h2>Dimensionless front velocity <span class="math inline">\(\mathcal{F}_{r}\)</span></h2>
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -574,17 +574,15 @@
 </figure>
 </div>
 </div>
-<!-- ::: {.fragment .important .boxed} -->
 <div class="r-stack">
 <p><span class="fragment fade-out" data-fragment-index="1"><span class="math display">\[\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)\]</span></span></p>
 <p><span class="fragment fade-in-then-out" data-fragment-index="1"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)\]</span></span></p>
 <p><span class="fragment fade-in-then-out" data-fragment-index="2"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)\]</span></span></p>
 <p><span class="fragment fade-in" data-fragment-index="3"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})\]</span></span></p>
 </div>
-<!-- ::: -->
 </section>
-<section id="front-velocity-1" class="slide level2">
-<h2>Front velocity</h2>
+<section id="dimensionless-front-velocity-mathcalf_rtheta" class="slide level2">
+<h2>Dimensionless front velocity <span class="math inline">\(\mathcal{F}_{r}(\theta)\)</span></h2>
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -593,180 +591,180 @@
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="talk_files/src/figures/figure_froude_theta_1.svg" class="fragment" style="width:80.0%"></p>
+<p><img data-src="talk_files/src/figures/figure_froude_theta_1.svg" class="fragment" style="width:80.0%" data-fragment-index="1"></p>
 </figure>
 </div>
 <!-- ![](talk_files/src/figures/figure_froude_theta_2.svg){.fragment width=80% fig-align="center"} -->
 </div>
-<!-- :::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![](talk_files/src/figures/nose_positions_0.svg){width=80% fig-align="center"}
-
-
-:::
-:::: -->
-<!-- ## Latest: particle byoyancy in steady influx turbidity currents
-
-:::: {.columns .v-center-container}
-::: {.column width=52%}
-
-![Steady injection of a suspension of plastic particles.](talk_files/src/steady_influx_sed.svg){width=100% fig-align="center"}
-
-:::
-
-::: {.column width=48%}
-
-![Steady injection of a mix (plastic particles + saline water) in freshwater.](talk_files/src/parti_distrib_JEAN.svg){width=100% fig-align="center"}
-
-:::
-::::
-
-
-## Front position
-
-:::: {.columns .v-center-container}
-
-::: {.column width=50%}
-
-![Rottman et al. 1983, saline water, no slope ($\theta=0^\circ$)](talk_files/src/Rottman1983.svg){width=100%}
-
-:::
-
-::: {.column width=10%}
-:::
-
-::: {.column width=40%}
-
-
-- length: $L_{0}$ (lock length)
-- velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
-- time: $t_{0} = L_{0}/u_{0}$
-
-::: {.fragment style="color:#eb7f19"}
-- $u_{\rm c} \simeq 0.5 u_{0}$
-- $t_{\rm end} \simeq 20 t_{0}$
-- Prefactors constant
-:::
-
-::: {.fragment .important .boxed}
-What happens for an inclined tank ?
-:::
-
-:::
-
-::::
-
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {layout="[[1, -0.1, 1.11]]"}
-
-![Sketch of the numerical set-up](talk_files/src/Birman2007/sketch.svg){width=2000 fig-align="center"}
-
-![Snapshot of numerical simulation ($\theta=30^\circ$)](talk_files/src/Birman2007/simu_ex.svg){width=2000 fig-align="center"}
-
-:::
-::::
-
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![[Constant-velocity regime still observed for $\theta > 0^\circ$]{.colored}](talk_files/src/Birman2007/velocity_time.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![[Slope-induced acceleration matters after $t_{*} \propto 4 \displaystyle\frac{t_{0}}{\sin\theta}$]{.colored}](talk_files/src/Birman2007/time_theta.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## The influence of the slope (Birman et al. 2007)
-
-:::: {.columns .v-center-container}
-::: {.column width=100%}
-
-![[But still, the velocity in the constant-velocity regime depends on $\theta$]{.colored}](talk_files/src/Birman2007/velocity_theta.svg){width=50% fig-align="center"}
-
-:::
-::::
-
-## First problem: Slope effect or no slope effect
-
-::: {.important .boxed}
-Slope-induced acceleration needs $t_{*}$ to matter but velocity in slumping constant-velocity regime still depends on slope.
-:::
-
-- importantce of the early transient regime ?
-
-![Adapted from Cantero et al. 2007](talk_files/src/Cantero2007/velocity_pos.svg){width=30% fig-align="center"}
-
-
-## Second Problem: matching datasets
-
-::: {.r-stack}
-![](talk_files/src/slope_datasets/figure_slope_0.svg){height="800" fig-align="center"}
-
-![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center" .fragment}
-
-:::
-
-## Second Problem: matching datasets
-
-![Bonometti et al. 2011 ($\lambda = L_{0}/h_{0}$)](talk_files/src/Bonometti2011.svg){height="800" fig-align="center"}
-
-## Second Problem: matching datasets
-
-::: {.r-stack}
-![](talk_files/src/slope_datasets/figure_slope_1.svg){height="800" fig-align="center"}
-
-![](talk_files/src/slope_datasets/figure_slope_0_ratio.svg){height="800" fig-align="center" .fragment}
-
-![](talk_files/src/slope_datasets/figure_slope_1_ratio.svg){height="800" fig-align="center" .fragment}
-:::
-
-## Conclusion -- lock-aspect-ratio and early transient regime
-
-- slope-induced acceleration occurs after a time $t_{*}$ **but** current velocity $u_{\rm c}/u_{0}$ before that depends on $\theta$
-
-- Different datasets for $u_{\rm c}/u_{0}$ still scattered
-
-::: {style="text-align:center"}
-
-
-{{< fa arrow-down size=3x >}} 
-
-
-
-
-:::
-
-:::: {.columns}
-
-::: {.column width=50%}
-
-- dynamics during the transient early regime ? 
-- vertical acceleration, interface shear, dissipation ?
-- influence of lock geometry and slope ?
-
-:::
-
-::: {.column width=50%}
-
-![Early transient regime of slumping (Cantero et al. 2007)](talk_files/src/Cantero2007/slumping.svg){width=70% fig-align="center"}
-:::
-
-:::: -->
+<p><span class="fragment" data-fragment-index="1"><span class="math inline">\(\bullet\)</span> Global increasing trend, but scatter across datasets <span class="math inline">\(\rightarrow\)</span> influence of other parameters ? <span class="math inline">\(h_{0}/L_{0}\)</span> ?</span></p>
+</section>
+<section id="influence-of-settling-s" class="slide level2">
+<h2>Influence of settling, <span class="math inline">\(S\)</span></h2>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\theta=7^\circ\)</span>, <span class="math inline">\(\mathcal{R}_{e} \simeq 6{\times}10^{4}\)</span></p>
+<div class="columns v-center-container" style="height:80%">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="talk_files/src/videos/silibeads40m_70m/run02/output.mp4" style="width:80.0%" controls=""><a href="talk_files/src/videos/silibeads40m_70m/run02/output.mp4">Video</a></video></p>
+<p></p><figcaption><span class="math inline">\(d \sim 60~\mu\)</span>m, <span class="math inline">\(\mathcal{S} = 0.01\)</span></figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="talk_files/src/videos/silibeads120m/run02/output.mp4" style="width:80.0%" controls=""><a href="talk_files/src/videos/silibeads120m/run02/output.mp4">Video</a></video></p>
+<p></p><figcaption><span class="math inline">\(d \sim 135~\mu\)</span>m, <span class="math inline">\(\mathcal{S} = 0.04\)</span></figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="talk_files/src/videos/silibeads200m_300m/run02/output.mp4" style="width:80.0%" controls=""><a href="talk_files/src/videos/silibeads200m_300m/run02/output.mp4">Video</a></video></p>
+<p></p><figcaption><span class="math inline">\(d \sim 250~\mu\)</span>m, <span class="math inline">\(\mathcal{S} = 0.1\)</span></figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/settling_velocity_nose_propagation.svg" class="fragment" style="width:100.0%" data-fragment-index="1"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="slumping-regime-duration-t_rm-end" class="slide level2">
+<h2>Slumping regime duration, <span class="math inline">\(t_{\rm end}\)</span></h2>
+<p><span class="fragment" data-fragment-index="4"><span class="math inline">\(\bullet\)</span> Dimensionless by settling time <span class="math inline">\(t_{\rm s} = h_{0}/v_{\rm s}\)</span></span></p>
+<div class="columns v-center-container" style="height:70%">
+<div class="column" style="width:100%;">
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_0.svg" style="width:80.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_1.svg" class="fragment" style="width:80.0%" data-fragment-index="1"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_2.svg" class="fragment" style="width:80.0%" data-fragment-index="2"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_3.svg" class="fragment" style="width:80.0%" data-fragment-index="3"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_4.svg" class="fragment" style="width:80.0%" data-fragment-index="4"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_5.svg" class="fragment" style="width:80.0%" data-fragment-index="5"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_6.svg" class="fragment" style="width:80.0%" data-fragment-index="6"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_7.svg" class="fragment" style="width:80.0%" data-fragment-index="7"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_8.svg" class="fragment" style="width:80.0%" data-fragment-index="8"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mixing-and-water-entrainment" class="slide level2">
+<h2>Mixing and water entrainment</h2>
+<div class="columns v-center-container" style="height:70%">
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/sketch_entrainment_wilson2017.svg" style="width:80.0%"></p>
+<p></p><figcaption>from Wilson et al.&nbsp;2016</figcaption><p></p>
+</figure>
+</div>
+<p><br></p>
+<div class="fragment" style="text-align:center">
+<p><span class="boxed">Entrainment coefficient, <span class="math inline">\(E = \displaystyle\frac{w_{\rm e}}{U}\)</span></span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="entrainment-coefficient-e-fmathcalr_e" class="slide level2">
+<h2>Entrainment coefficient, <span class="math inline">\(E = f(\mathcal{R}_{e})\)</span></h2>
+<div class="columns v-center-container">
+<div class="column" style="width:100%;">
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_entrainment_0.svg" style="width:80.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_entrainment_1.svg" class="fragment" style="width:80.0%" data-fragment-index="1"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_entrainment_2.svg" class="fragment" style="width:80.0%" data-fragment-index="2"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-a-nutshell" class="slide level2">
+<h2>In a nutshell</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="boxed">
+<p>Slumping regime:</p>
+<ul>
+<li>dimensionless velocity <span class="math inline">\(\mathcal{F}_{r}\)</span> increases with <span class="math inline">\(\theta\)</span></li>
+<li>duration <span class="math inline">\(t_{\rm end}\)</span>:
+<ul>
+<li><span class="math inline">\(t_{\rm end} \propto t_{0} = L_{0}/u_{0}\)</span> for <span class="math inline">\(\mathcal{S} &lt; 2.10^{-2}\)</span></li>
+<li><span class="math inline">\(t_{\rm end} \propto t_{s} = h_{0}/v_{\rm s}\)</span> for <span class="math inline">\(\mathcal{S} &gt; 2.10^{-2}\)</span></li>
+</ul></li>
+<li>entrainment increases with Reynolds as <span class="math inline">\(E \propto \mathcal{R}_{e}\)</span></li>
+</ul>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column fragment" style="width:45%;">
+<p>What’s next ?</p>
+<ul>
+<li>Comparison with depth-averaged models</li>
+<li>Influence of lock aspect-ratio <span class="math inline">\(h_{0}/L_{0}\)</span> ?</li>
+<li>Influence of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\mathcal{S}\)</span> on <span class="math inline">\(E\)</span> ?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Moving towards steady influx turbidity currents</li>
+</ul>
+</div>
+</div>
+<div class="fragment" style="margin-top:4%">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4" style="width:85.0%" controls=""><a href="talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4">Video</a></video></p>
+<p></p><figcaption>Steady injection of a water/plastic suspension inside fresh water.</figcaption><p></p>
+</figure>
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>

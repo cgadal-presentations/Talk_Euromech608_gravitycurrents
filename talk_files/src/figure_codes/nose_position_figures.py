@@ -62,8 +62,8 @@ for i in range(3):
         ax.annotate(r'slope $\equiv~u_{\rm c}$', xy=(8, 50), xytext=(12, 50),
                     arrowprops=dict(arrowstyle="->", shrinkA=5, shrinkB=5))
 
-    ax.set_xlabel('Time, $t$ (s)')
-    ax.set_ylabel(r'Nose position, $x$ (cm)')
+    ax.set_xlabel('Time, $t$ [s]')
+    ax.set_ylabel('Nose position, $x$ [cm]')
     ax.set_xlim(left=0, right=22.5)
     ax.set_ylim(bottom=0)
 

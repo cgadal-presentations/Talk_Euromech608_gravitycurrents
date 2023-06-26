@@ -9,6 +9,4 @@ It briefly presents the results of the paper:
  - [Gadal, C., Mercier, M., & Lacaze, L. (2022). Slumping regime in lock-release turbidity currents. arXiv preprint arXiv:2301.00192.](https://arxiv.org/abs/2301.00192) (in review at Journal of Fluid Mechanics)
 
 
-
-https://github.com/Cgadal/Talk_Euromech608_gravitycurrents/assets/48522112/ef254a85-d738-478a-b3cd-f989991d9e1b
-
+![](talk_files/src/videos/silibeads40m_70m/../sand80m/run03/image_0700.png)

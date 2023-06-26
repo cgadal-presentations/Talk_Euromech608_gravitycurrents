@@ -145,7 +145,7 @@ for i in range(5):
         fmts_all = ['Sand120m_Theta0', 'Slope1', 'Slope3', 'Slope5', 'sand80m_H19']
         # fmts_sorted = ['Slope1', 'sand80m_H19']
         fmts_sorted = ['Sand120m_Theta0', 'sand80m_H19']
-    if i < 1:
+    if i < 3:
         Par_sorted = [DATA[fmt]['settling_velocity'][0] for fmt in fmts_sorted]
     else:
         Par_sorted = [DATA[fmt]['slope'] for fmt in fmts_sorted]

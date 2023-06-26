@@ -1,35 +1,12 @@
-# Geophysical data, where to find them ?
+# Slumping regime in lock-release turbidity currents: Bottom slope and particle settling
 
-This repository contain the presentation given at the PMMH lab (Paris, France), the 02/02/2023 by myself (C. Gadal).
+This repository contains the presentation given at the Euromech608: Dynamics of gravity currents at Grenoble (France) the 20/06/2023 by myself (C. Gadal).
 
-It can be found online [here](https://cgadal.github.io/talk_data_PMMH/talk.html#/title-slide). 
+It can be found online [here](https://cgadal.github.io/Talk_Euromech608_gravitycurrents/talk.html#/title-slide). 
 
-## Download the presentation
+It briefly presents the results of the paper:
 
-To download the presentation, you have to first download this repository:
+ - [Gadal, C., Mercier, M., & Lacaze, L. (2022). Slumping regime in lock-release turbidity currents. arXiv preprint arXiv:2301.00192.](https://arxiv.org/abs/2301.00192) (in review at Journal of Fluid Mechanics)
 
-- if you have git installed, run in a terminal:
 
-```bash
-    git clone https://github.com/Cgadal/talk_data_PMMH.git
-```
-
-- to download as zip, simply click [here](https://github.com/Cgadal/talk_data_PMMH/archive/refs/heads/main.zip)
-
-Once its downloaded, go to the saved folder on yor computer, and open the file `talk.html` in your favorite browser (usually, double-clicking on it should open it).
-
-> **Note**:
-> - do not copy the file `talk.html` alone somewhere else, it needs the other files to render properly.
-> - while it is an .html file, it will render in your browser even without internet connection. However, some content of this presentation is rendered online, and will not display without an internet connection.
-
-## Run the presentation codes
-
-The code used to open and display the data during the presentation can be found in the `notebooks` folder:
-
-- the `.py` script can be ran using python as you would usually do. For exemple, in a terminal:
-
-```bash
-    python3 PMMH_talk_data.py
-```
-
-- the `.ipynb` is a `jupyter-notebook`. To use those, refer to the [documentation](https://jupyter.org/).
+![Drag Racing](talk_files/src/videos/silibeads40m_70m/run02/output.mp4)

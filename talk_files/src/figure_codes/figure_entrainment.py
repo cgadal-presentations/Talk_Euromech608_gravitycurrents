@@ -337,7 +337,7 @@ for ifig in range(3):
     ax.add_patch(bad_points)
     ##
     ax.set_xlabel(
-        r"Reynolds number, $\mathcal{R}e = \rho_{0} \sqrt{g_{0}'H_{0}} H_{0}/\eta $")
+        r"Reynolds number, $\mathcal{R}e = u_{0} h_{0}/\nu $")
     ax.set_ylabel(r"Entrainment coefficient, $E$")
 
     leg1 = ax.legend(loc='center left', handler_map={

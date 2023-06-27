@@ -11,6 +11,7 @@ format:
     callout-icon: false
     slide-number: true
     auto-stretch: false
+    viewDistance: 14
     template-partials:
       - title-slide.html
     include-in-header: 
@@ -49,7 +50,7 @@ format:
 :::
 ::::
 
-## Lock-release systems
+<!-- ## Lock-release systems
 
 :::: {.columns .v-center-container}
 ::: {.column width=100%}
@@ -57,7 +58,7 @@ format:
 ![](talk_files/src/figures/Sketch_lock_release.svg){width=80% fig-align="center" #needbackground}
 
 :::
-::::
+:::: -->
 
 ## Lock-release systems
 
@@ -84,9 +85,10 @@ format:
 
 ::: {.column width=45%}
 
-- length: $L_{0}$ (lock length)
-- velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
-- time: $t_{0} = L_{0}/u_{0}$
+- Scales:
+  - length: $L_{0}$ (lock length)
+  - velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\delta\rho}{\rho}g$
+  - time: $t_{0} = L_{0}/u_{0}$
 
 ::: {.fragment style="color:#eb7f19"}
 - $u_{\rm c} = \mathcal{F}_{r} u_{0}$, $t_{\rm end} = \tau t_{0}$
@@ -219,15 +221,19 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 
 :::
 
+::: {.important}
+
 ::: {.r-stack}
 
-[$$\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$$]{.fragment .fade-out fragment-index=1}
+[$\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-out fragment-index=1}
 
-[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$$]{.fragment .fade-in-then-out fragment-index=1}
+[$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-in-then-out fragment-index=1}
 
-[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)$$]{.fragment .fade-in-then-out fragment-index=2}
+[$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)$]{.boxed .fragment .fade-in-then-out fragment-index=2}
 
-[$$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})$$]{.fragment .fade-in fragment-index=3}
+[$\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})$]{.boxed .fragment .fade-in fragment-index=3}
+
+:::
 
 :::
 
@@ -370,7 +376,7 @@ What's next ?
 
 - Comparison with depth-averaged models
 - Influence of lock aspect-ratio $h_{0}/L_{0}$ ?
-- Influence of $\theta$ and $\mathcal{S}$ on $E$ ?
+- $t_{\rm end}(\theta)$, $E(\theta, \mathcal{S})$ ?
 
 </br>
 

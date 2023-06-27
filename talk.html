@@ -380,20 +380,17 @@
 </div>
 </div>
 </div>
+<!-- ## Lock-release systems
+
+:::: {.columns .v-center-container}
+::: {.column width=100%}
+
+![](talk_files/src/figures/Sketch_lock_release.svg){width=80% fig-align="center" #needbackground}
+
+:::
+:::: -->
 </section>
 <section id="lock-release-systems" class="slide level2">
-<h2>Lock-release systems</h2>
-<div class="columns v-center-container">
-<div class="column" style="width:100%;">
-<div id="needbackground" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="talk_files/src/figures/Sketch_lock_release.svg" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="lock-release-systems-1" class="slide level2">
 <h2>Lock-release systems</h2>
 <div class="columns v-center-container">
 <div class="column" style="width:100%;">
@@ -420,9 +417,12 @@
 
 </div><div class="column" style="width:45%;">
 <ul>
+<li>Scales:
+<ul>
 <li>length: <span class="math inline">\(L_{0}\)</span> (lock length)</li>
 <li>velocity: <span class="math inline">\(u_{0} = \sqrt{h_{0} g'}\)</span>, <span class="math inline">\(g' = \frac{\delta\rho}{\rho}g\)</span></li>
 <li>time: <span class="math inline">\(t_{0} = L_{0}/u_{0}\)</span></li>
+</ul></li>
 </ul>
 <div class="fragment" style="color:#eb7f19">
 <ul>
@@ -574,11 +574,13 @@
 </figure>
 </div>
 </div>
+<div class="important">
 <div class="r-stack">
-<p><span class="fragment fade-out" data-fragment-index="1"><span class="math display">\[\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)\]</span></span></p>
-<p><span class="fragment fade-in-then-out" data-fragment-index="1"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)\]</span></span></p>
-<p><span class="fragment fade-in-then-out" data-fragment-index="2"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)\]</span></span></p>
-<p><span class="fragment fade-in" data-fragment-index="3"><span class="math display">\[\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})\]</span></span></p>
+<p><span class="boxed fragment fade-out" data-fragment-index="1"><span class="math inline">\(\mathcal{F}_{r} = f(\mathcal{R}_{e}, \mathcal{S}, \theta)\)</span></span></p>
+<p><span class="boxed fragment fade-in-then-out" data-fragment-index="1"><span class="math inline">\(\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)\)</span></span></p>
+<p><span class="boxed fragment fade-in-then-out" data-fragment-index="2"><span class="math inline">\(\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \theta)\)</span></span></p>
+<p><span class="boxed fragment fade-in" data-fragment-index="3"><span class="math inline">\(\require{cancel} \mathcal{F}_{r} = f(\xcancel{\mathcal{R}_{e}}, \xcancel{\mathcal{S}}, \color{orange}{\theta})\)</span></span></p>
+</div>
 </div>
 </section>
 <section id="dimensionless-front-velocity-mathcalf_rtheta" class="slide level2">
@@ -749,7 +751,7 @@
 <ul>
 <li>Comparison with depth-averaged models</li>
 <li>Influence of lock aspect-ratio <span class="math inline">\(h_{0}/L_{0}\)</span> ?</li>
-<li>Influence of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\mathcal{S}\)</span> on <span class="math inline">\(E\)</span> ?</li>
+<li><span class="math inline">\(t_{\rm end}(\theta)\)</span>, <span class="math inline">\(E(\theta, \mathcal{S})\)</span> ?</li>
 </ul>
 <p><br></p>
 <ul>
@@ -936,7 +938,7 @@
         backgroundTransition: 'none',
 
         // Number of slides away from the current that are visible
-        viewDistance: 3,
+        viewDistance: 14,
 
         // Number of slides away from the current that are visible on mobile
         // devices. It is advisable to set this to a lower number than

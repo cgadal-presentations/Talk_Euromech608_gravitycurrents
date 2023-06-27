@@ -29,7 +29,7 @@ dirs = [
     'round_winter2022/Processing/Results/Silibeads100_200/',
     'round_winter2022/Processing/Results/Silibeads150_250/',
     'round_winter2022/Processing/Results/Saline/',
-    ]
+]
 
 # #### parameters
 ind = -1
@@ -74,31 +74,46 @@ for dir in dirs:
                            in DATA[fmt]['runs']]) * 1e-6/W_reservoir  # [m2]
     H0 = (Vreservoir/L_reservoir)  # [m]
     #
-    DATA[fmt]['velocity'] = np.array([Position_processed[run][ind]['velocity'] for run in DATA[fmt]['runs']]) * 1e-2  # [m/s]
+    DATA[fmt]['velocity'] = np.array(
+        [Position_processed[run][ind]['velocity'] for run in DATA[fmt]['runs']]) * 1e-2  # [m/s]
     DATA[fmt]['H0'] = H0
-    DATA[fmt]['rho_m'] = np.array([Parameters[run]['Current density']*1e3 for run in DATA[fmt]['runs']])
+    DATA[fmt]['rho_m'] = np.array(
+        [Parameters[run]['Current density']*1e3 for run in DATA[fmt]['runs']])
     DATA[fmt]['gprime'] = (DATA[fmt]['rho_m'] - rho_f) * g / rho_f
     DATA[fmt]['vscale'] = unp.sqrt(DATA[fmt]['gprime']*DATA[fmt]['H0'])
-    DATA[fmt]['REYNOLDS'] = Reynolds(DATA[fmt]['vscale'], H0, DATA[fmt]['rho_m'], mu)
+    DATA[fmt]['REYNOLDS'] = Reynolds(
+        DATA[fmt]['vscale'], H0, DATA[fmt]['rho_m'], mu)
     #
-    DATA[fmt]['position'] = [Position_processed[run][ind]['position'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['time'] = [Position_processed[run][ind]['time'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['t0'] = [Position_processed[run][ind]['virtual_time_origin'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['x0'] = [Position_processed[run][ind]['virtual_x_origin'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['time_short'] = [Position_processed[run][ind]['time_short'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['velocity_ts'] = [Position_processed[run][ind]['velocity_ts'] for run in DATA[fmt]['runs']]
+    DATA[fmt]['position'] = [Position_processed[run][ind]['position']
+                             for run in DATA[fmt]['runs']]
+    DATA[fmt]['time'] = [Position_processed[run][ind]['time']
+                         for run in DATA[fmt]['runs']]
+    DATA[fmt]['t0'] = [Position_processed[run][ind]['virtual_time_origin']
+                       for run in DATA[fmt]['runs']]
+    DATA[fmt]['x0'] = [Position_processed[run][ind]['virtual_x_origin']
+                       for run in DATA[fmt]['runs']]
+    DATA[fmt]['time_short'] = [Position_processed[run][ind]['time_short']
+                               for run in DATA[fmt]['runs']]
+    DATA[fmt]['velocity_ts'] = [Position_processed[run][ind]['velocity_ts']
+                                for run in DATA[fmt]['runs']]
     #
     DATA[fmt]['timings'] = np.array([Position_processed[run][ind]['times_fit']
                                      for run in DATA[fmt]['runs']])[:, 1]  # [s]
-    DATA[fmt]['timings'] = unp.uarray(DATA[fmt]['timings'], 0.15*DATA[fmt]['timings'])  # adding +/-1sec uncertainty to end time meas.
+    # adding +/-1sec uncertainty to end time meas.
+    DATA[fmt]['timings'] = unp.uarray(
+        DATA[fmt]['timings'], 0.15*DATA[fmt]['timings'])
     #
     mask_time = DATA[fmt]['timings'] > 10.5*L_reservoir/DATA[fmt]['vscale']
-    mask_vel = (DATA[fmt]['velocity'] > 0.3*DATA[fmt]['vscale']) & (DATA[fmt]['velocity'] < 0.5*DATA[fmt]['vscale'])
+    mask_vel = (DATA[fmt]['velocity'] > 0.3*DATA[fmt]['vscale']
+                ) & (DATA[fmt]['velocity'] < 0.5*DATA[fmt]['vscale'])
     DATA[fmt]['mask_ok'] = (mask_vel & mask_time)
     #
-    DATA[fmt]['i_start_end'] = [Position_processed[run][ind]['indexes_fit'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['velocity_fit'] = [Position_processed[run][ind]['velocity_fit'] for run in DATA[fmt]['runs']]
-    DATA[fmt]['virtual_x_origin'] = [Position_processed[run][ind]['virtual_x_origin'] for run in DATA[fmt]['runs']]
+    DATA[fmt]['i_start_end'] = [Position_processed[run][ind]['indexes_fit']
+                                for run in DATA[fmt]['runs']]
+    DATA[fmt]['velocity_fit'] = [Position_processed[run][ind]['velocity_fit']
+                                 for run in DATA[fmt]['runs']]
+    DATA[fmt]['virtual_x_origin'] = [Position_processed[run]
+                                     [ind]['virtual_x_origin'] for run in DATA[fmt]['runs']]
 
 
 for ifig in range(9):
@@ -138,7 +153,8 @@ for ifig in range(9):
         #
         a, _, _ = ax.errorbar(x[mask], y[mask], xerr=xerr[mask], yerr=yerr[mask],
                               fmt='.',
-                              label=r'${:.2L}$'.format(vs) if not np.isnan(vs.n) else 'Saline',
+                              label=r'${:.2L}$'.format(
+                                  vs) if not np.isnan(vs.n) else 'Saline',
                               color=tp.colors[fmt])
         ax.set_xscale('log')
         ax.set_yscale('log')
@@ -158,7 +174,7 @@ for ifig in range(9):
         handles = [a]
         if ifig >= 5:
             b = ax.axvline(1/15, color='w', ls=':', lw=1, zorder=-10,
-                           label=r'$P = 0.07$'
+                           label=r'$S/a = 0.07$'
                            )
             handles = [a, b]
             #
@@ -190,16 +206,18 @@ for ifig in range(9):
         ax.set_xlim((0.08, 1.65))
         ax.set_ylim((1.7, 53))
         ax.set_xlabel(r"Time scale, $t_{0} = L_{0}/u_{0}$ [s]")
-        ax.set_ylabel(r"End time, $t_{\rm end}$ [s]")
+        ax.set_ylabel(r"Duration, $t_{\rm end}$ [s]")
     else:
         ax.set_xlim((0.0033, 0.12))
         ax.set_ylim((0.1, 1.65))
-        ax.set_xlabel(r"Settling number, $t_{0}/t_{\rm s} = \mathcal{S} = v_{\rm s}/u_{0}$")
-        ax.set_ylabel(r"Rescaled end time, $t_{\rm end}/t_{\rm s}$")
+        ax.set_xlabel(
+            r"$t_{0}/t_{\rm s} = \mathcal{S}/a = (v_{\rm s}/u_{0})(L_{0}/h_{0}) \sim$ Settling number")
+        ax.set_ylabel(r"Dimensioless duration, $t_{\rm end}/t_{\rm s}$")
 
     leg2 = ax.legend(handles=handles, bbox_to_anchor=(1.05, 0),
                      loc='lower left', borderaxespad=0.)
     ax.add_artist(leg1)
 
     fig_dir = '../figures'
-    fig.savefig('../figures/{}_{}.svg'.format(sys.argv[0].split(os.sep)[-1].replace('.py', ''), ifig), dpi=600)
+    fig.savefig('../figures/{}_{}.svg'.format(
+        sys.argv[0].split(os.sep)[-1].replace('.py', ''), ifig), dpi=600)

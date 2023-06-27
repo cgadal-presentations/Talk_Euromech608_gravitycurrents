@@ -61,7 +61,7 @@ dirs = [
     'round_winter2022/Processing/Results/Silibeads150_250/',
     'round_winter2022/Processing/Results/Saline/',
     'round_winter2022/Processing/Results/Sand120m_Theta0/',
-    ]
+]
 
 # DATA2 = {}
 # dirs_2 = [
@@ -107,14 +107,16 @@ for dir in dirs:
     DATA[fmt]['velocity'] = np.array([Position_processed[run][ind]['velocity']
                                       for run in DATA[fmt]['runs']])*1e-2  # [m/s]
     if 'Slope' in fmt:
-        DATA[fmt]['velocity'] = DATA[fmt]['velocity']*1.007  # correction from calibration bias
+        DATA[fmt]['velocity'] = DATA[fmt]['velocity'] * \
+            1.007  # correction from calibration bias
     Vreservoir = np.array([Parameters[run]['V_reservoir'] for run
                            in DATA[fmt]['runs']]) * 1e-6/W_reservoir  # [m2]
     H0 = (Vreservoir/L_reservoir)  # [m]
     #
     DATA[fmt]['H0'] = H0
     # DATA[fmt]['rho_m'] = rho_f*(1 + DATA[fmt]['Volume_fraction']*(rho_p-rho_f)/rho_f)
-    DATA[fmt]['rho_m'] = np.array([Parameters[run]['Current density']*1e3 for run in DATA[fmt]['runs']])
+    DATA[fmt]['rho_m'] = np.array(
+        [Parameters[run]['Current density']*1e3 for run in DATA[fmt]['runs']])
     DATA[fmt]['gprime'] = (DATA[fmt]['rho_m'] - rho_f) * g / rho_f
     DATA[fmt]['vscale'] = unp.sqrt(DATA[fmt]['gprime']*DATA[fmt]['H0'])
     DATA[fmt]['FROUDES'] = DATA[fmt]['velocity']/DATA[fmt]['vscale']
@@ -125,7 +127,8 @@ for dir in dirs:
     # mask_time = DATA[fmt]['timings'] > 0
     # mask_vel = (DATA[fmt]['velocity'] > 0)
     mask_time = DATA[fmt]['timings'] > 10.5*L_reservoir/DATA[fmt]['vscale']
-    mask_vel = (DATA[fmt]['velocity'] > 0.3*DATA[fmt]['vscale']) & (DATA[fmt]['velocity'] < 0.5*DATA[fmt]['vscale'])
+    mask_vel = (DATA[fmt]['velocity'] > 0.3*DATA[fmt]['vscale']
+                ) & (DATA[fmt]['velocity'] < 0.5*DATA[fmt]['vscale'])
     mask_Re = DATA[fmt]['REYNOLDS'] > 2e4
     DATA[fmt]['mask_ok'] = (mask_vel & mask_time & mask_Re)
     DATA[fmt]['set-up'] = 1
@@ -142,7 +145,8 @@ for i in range(5):
     elif i == 2:
         fmts_sorted = ['Saline', 'Silibeads40_70', 'sand80m_H19']
     else:
-        fmts_all = ['Sand120m_Theta0', 'Slope1', 'Slope3', 'Slope5', 'sand80m_H19']
+        fmts_all = ['Sand120m_Theta0', 'Slope1',
+                    'Slope3', 'Slope5', 'sand80m_H19']
         # fmts_sorted = ['Slope1', 'sand80m_H19']
         fmts_sorted = ['Sand120m_Theta0', 'sand80m_H19']
     if i < 3:
@@ -160,9 +164,10 @@ for i in range(5):
             xerr = unp.std_devs(Reynolds)
             yerr = unp.std_devs(Froude)
             #
-            label = r'${:.2L}$'.format(par) if not np.isnan(par.n) else r'$\textrm{Saline}$'
+            label = r'${:.2L}$'.format(par) if not np.isnan(
+                par.n) else r'$\textrm{Saline}$'
             a, _, _ = ax.errorbar(x, y, xerr=xerr, yerr=yerr, fmt='.', label=label,
-                                color=tp.colors[fmt])
+                                  color=tp.colors[fmt])
     #     # ## fit
     #     if (i > 1) | (fmt == 'sand80m_H19'):
     #         x_fit = np.logspace(np.log10(Reynolds.min().n*0.25),
@@ -203,8 +208,8 @@ for i in range(5):
     ax.set_xlim([2e4, 4.2e5])
     # ax.set_yscale('log')
     ax.set_ylabel(r'$\mathcal{F}_{r} = u_{\rm c}/u_{0}$')
-    ax.set_xlabel(r'$\mathcal{R}_{e} = u_{0} h_{0}/\nu$')
-
+    ax.set_xlabel(r'Reynolds number, $\mathcal{R}_{e} = u_{0} h_{0}/\nu$')
 
     fig_dir = '../figures'
-    fig.savefig('../figures/{}_{}.svg'.format(sys.argv[0].split(os.sep)[-1].replace('.py', ''), i), dpi=600)
+    fig.savefig(
+        '../figures/{}_{}.svg'.format(sys.argv[0].split(os.sep)[-1].replace('.py', ''), i), dpi=600)

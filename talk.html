@@ -632,11 +632,8 @@
 </div>
 </div>
 </section>
-<section id="slumping-regime-duration-t_rm-end" class="slide level2">
-<h2>Slumping regime duration, <span class="math inline">\(t_{\rm end}\)</span></h2>
-<p><span class="fragment" data-fragment-index="4"><span class="math inline">\(\bullet\)</span> Dimensionless by settling time <span class="math inline">\(t_{\rm s} = h_{0}/v_{\rm s}\)</span></span></p>
-<div class="columns v-center-container" style="height:70%">
-<div class="column" style="width:100%;">
+<section id="dimensionless-duration-tau" class="slide level2">
+<h2>Dimensionless duration, <span class="math inline">\(\tau\)</span></h2>
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -684,8 +681,30 @@
 </figure>
 </div>
 </div>
+<div class="important">
+<div class="r-stack">
+<p><span class="boxed fragment fade-out" data-fragment-index="1"><span class="math inline">\(\tau = f(\mathcal{R}_{e}, \mathcal{S}, \theta)\)</span></span></p>
+<p><span class="boxed fragment fade-in" data-fragment-index="1"><span class="math inline">\(\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)\)</span></span></p>
+<p><span class="boxed fragment fade-in" data-fragment-index="4"><span class="math inline">\(\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}},\color{orange}{\mathcal{S}}, \theta)\)</span></span></p>
 </div>
 </div>
+<p><span class="fragment" data-fragment-index="7" style="font-size:smaller"><span class="math inline">\(\bullet\)</span> settling dominated: <span class="math inline">\(\tau \propto (\mathcal{S}/a)^{-1} \iff t_{\rm end} \propto h_{0}/v_{\rm s}\)</span></span></p>
+</section>
+<section id="dimensionless-duration-tau-1" class="slide level2">
+<h2>Dimensionless duration, <span class="math inline">\(\tau\)</span></h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="talk_files/src/figures/figure_duration_8.svg" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<div class="important">
+<div class="r-stack">
+<p><span class="boxed"><span class="math inline">\(\require{cancel}\tau = f(\xcancel{\mathcal{R}_{e}}, \color{orange}{\mathcal{S}}, \theta\rightarrow?)\)</span></span></p>
+</div>
+</div>
+<p><span style="font-size:smaller"><span class="math inline">\(\bullet\)</span> settling dominated: <span class="math inline">\(\tau \propto (\mathcal{S}/a)^{-1} \iff t_{\rm end} \propto h_{0}/v_{\rm s}\)</span></span></p>
 </section>
 <section id="mixing-and-water-entrainment" class="slide level2">
 <h2>Mixing and water entrainment</h2>
@@ -736,13 +755,14 @@
 <p>Slumping regime:</p>
 <ul>
 <li>dimensionless velocity <span class="math inline">\(\mathcal{F}_{r}\)</span> increases with <span class="math inline">\(\theta\)</span></li>
-<li>duration <span class="math inline">\(t_{\rm end}\)</span>:
+<li>dimensioless duration <span class="math inline">\(\tau\)</span>:
 <ul>
-<li><span class="math inline">\(t_{\rm end} \propto t_{0} = L_{0}/u_{0}\)</span> for <span class="math inline">\(\mathcal{S} &lt; 2.10^{-2}\)</span></li>
-<li><span class="math inline">\(t_{\rm end} \propto t_{s} = h_{0}/v_{\rm s}\)</span> for <span class="math inline">\(\mathcal{S} &gt; 2.10^{-2}\)</span></li>
+<li>for <span class="math inline">\(\mathcal{S} &lt; 2.10^{-2}\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\tau \simeq 30\)</span></li>
+<li>for <span class="math inline">\(\mathcal{S} &gt; 2.10^{-2}\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\tau \simeq 0.8 (\mathcal{S}/a)^{-1}\)</span></li>
 </ul></li>
 <li>entrainment increases with Reynolds as <span class="math inline">\(E \propto \mathcal{R}_{e}\)</span></li>
 </ul>
+<p><span style="font-size:smaller">More in: <em>Slumping regime in lock-release turbidity currents.</em> Gadal et al.&nbsp;2023, in review in JFM. <em>preprint:arXiv2301.00192</em></span></p>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -751,7 +771,7 @@
 <ul>
 <li>Comparison with depth-averaged models</li>
 <li>Influence of lock aspect-ratio <span class="math inline">\(h_{0}/L_{0}\)</span> ?</li>
-<li><span class="math inline">\(t_{\rm end}(\theta)\)</span>, <span class="math inline">\(E(\theta, \mathcal{S})\)</span> ?</li>
+<li><span class="math inline">\(\tau(\theta)\)</span>, <span class="math inline">\(E(\theta, \mathcal{S})\)</span> ?</li>
 </ul>
 <p><br></p>
 <ul>
@@ -759,7 +779,7 @@
 </ul>
 </div>
 </div>
-<div class="fragment" style="margin-top:4%">
+<div class="fragment" style="margin-top:2%">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><video data-src="talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4" style="width:85.0%" controls=""><a href="talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4">Video</a></video></p>

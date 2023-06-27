@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import template as tp
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox
 from uncertainties import ufloat
 import PyThemes.Beamer_169 as Beamer
 from uncertainties import unumpy as unp
@@ -117,9 +118,10 @@ for dir in dirs:
 
 
 for ifig in range(9):
-    fig, ax = plt.subplots(1, 1, figsize=(Beamer.fig_width,
-                                          0.9*Beamer.fig_height),
-                           constrained_layout=True)
+    fig, ax = plt.subplots(1, 1, sharex=True,
+                           figsize=(Beamer.fig_width, 0.93*Beamer.fig_height), layout='constrained')
+    ax.set_position(Bbox([[0.12219661301172693, 0.15252121419059672], [
+                    0.7372227455454167, 0.98]]))
     #
     fmts = ['Saline', 'sand80m_H19', 'Silibeads40_70',
             'silibeads200m_300m', 'Silibeads100_200', 'Silibeads150_250']
@@ -139,15 +141,15 @@ for ifig in range(9):
         tsed = L_reservoir/(DATA[fmt]['settling_velocity']*1e-2)
         tend = DATA[fmt]['timings']
         if ifig <= 3:
-            x = unp.nominal_values(tscale)
-            xerr = unp.std_devs(tscale)
-            y = unp.nominal_values(tend)
-            yerr = unp.std_devs(tend)
+            x = unp.nominal_values(DATA[fmt]['REYNOLDS'])
+            xerr = unp.std_devs(DATA[fmt]['REYNOLDS'])
+            y = unp.nominal_values(tend/tscale)
+            yerr = unp.std_devs(tend/tscale)
         else:
             x = unp.nominal_values(tscale/tsed)
             xerr = unp.std_devs(tscale/tsed)/2
-            y = unp.nominal_values(tend/tsed)
-            yerr = unp.std_devs(tend/tsed)/2
+            y = unp.nominal_values(tend/tscale)
+            yerr = unp.std_devs(tend/tscale)/2
             #
         mask = DATA[fmt]['mask_ok']
         #
@@ -159,18 +161,17 @@ for ifig in range(9):
         ax.set_xscale('log')
         ax.set_yscale('log')
 
-    leg1 = ax.legend(title=r'$v_{\rm s}$ [cm/s]', bbox_to_anchor=(1.05, 1),
+    leg1 = ax.legend(title=r'$v_{\rm s}$ [cm/s]', bbox_to_anchor=(1.02, 1),
                      loc='upper left', borderaxespad=0.)
     if (ifig <= 3):
         xth = np.logspace(-2, 0.3, 100)
-        a, = ax.plot(xth, xth*30, color='w', ls='--', lw=1, zorder=-10,
-                     label=r"$t_{\rm end} = 30t_{0}$")
+        a = ax.axhline(30, color='w', ls='--', lw=1, zorder=-10,
+                       label=r"$\tau = 30$")
         handles = [a]
     elif ifig >= 4:
         xth = np.logspace(-3, -1, 100)
-        a, = ax.plot(xth, 30*xth, color='w', ls='--', lw=1, zorder=-10,
-                     label=r"$t_{\rm end} = 30t_{0}$"
-                     )
+        a = ax.axhline(30, color='w', ls='--', lw=1, zorder=-10,
+                       label=r"$\tau = 30$")
         handles = [a]
         if ifig >= 5:
             b = ax.axvline(1/15, color='w', ls=':', lw=1, zorder=-10,
@@ -178,43 +179,46 @@ for ifig in range(9):
                            )
             handles = [a, b]
             #
-            ax.text(0.089, 0.3, 'no \n constant velocity \n regime', rotation=55,
+            ax.text(0.089, 37.5, 'no \n constant velocity \n regime', rotation=60,
                     ha='center', va='center')
 
         if ifig >= 7:
-            c = ax.axhline(0.9, color='w', ls='-.', lw=1, zorder=-10,
-                           label=r'$t_{\rm end} \propto t_{\rm s}$'
-                           )
+            c,  = ax.plot(xth, 0.8*xth**-1, color='w', ls='-.', lw=1, zorder=-10,
+                          label=r'$\tau = 0.8(\mathcal{S}/a)^{-1}$')
             handles = [a, b, c]
 
         if ifig >= 6:
             ax.axvspan(ax.get_xlim()[0], 0.013, zorder=-10, alpha=0.2,
                        color='tab:blue', linewidth=0)
-            ax.text(0.0065, 0.6, 'negligible settling \n (saline currents limit)',
+            ax.text(0.0065, 12.5, 'negligible settling \n (saline currents limit)',
                     ha='center', va='center')
         if ifig >= 7:
             ax.axvspan(0.0374, 0.0667, zorder=-10, alpha=0.2,
                        color='tab:orange', linewidth=0)
-            ax.text(0.05, 0.23, 'settling \n dominated', ha='center', va='center',
+            ax.text(0.05, 40, 'settling \n dominated', ha='center', va='center',
                     rotation=45)
         if ifig >= 8:
             ax.axvspan(0.013, 0.0374, zorder=-10, alpha=0.2,
                        color='tab:green', linewidth=0)
-            ax.text(0.02, 0.2, 'transition', ha='center', va='center')
+            ax.text(0.02, 12.5, 'transition', ha='center', va='center')
 
     if ifig <= 3:
-        ax.set_xlim((0.08, 1.65))
-        ax.set_ylim((1.7, 53))
-        ax.set_xlabel(r"Time scale, $t_{0} = L_{0}/u_{0}$ [s]")
-        ax.set_ylabel(r"Duration, $t_{\rm end}$ [s]")
+        ax.set_ylim((8, 55))
+        ax.set_xlim((2e4, 4.2e5))
+        ax.set_yticks([10])
+        ax.set_xlabel(r'Reynolds number, $\mathcal{R}_{e} = u_{0} h_{0}/\nu$')
+        ax.set_ylabel(
+            r"Dimensionless duration, $\tau = t_{\rm end}/t_{0}$")
     else:
         ax.set_xlim((0.0033, 0.12))
-        ax.set_ylim((0.1, 1.65))
+        ax.set_ylim((8, 55))
+        ax.set_yticks([10])
         ax.set_xlabel(
-            r"$t_{0}/t_{\rm s} = \mathcal{S}/a = (v_{\rm s}/u_{0})(L_{0}/h_{0}) \sim$ Settling number")
-        ax.set_ylabel(r"Dimensioless duration, $t_{\rm end}/t_{\rm s}$")
+            r"$\mathcal{S}/a = (v_{\rm s}/u_{0})(L_{0}/h_{0}) \sim$ Settling number")
+        ax.set_ylabel(
+            r"Dimensionless duration, $\tau = t_{\rm end}/t_{0}$")
 
-    leg2 = ax.legend(handles=handles, bbox_to_anchor=(1.05, 0),
+    leg2 = ax.legend(handles=handles, bbox_to_anchor=(1.02, 0),
                      loc='lower left', borderaxespad=0.)
     ax.add_artist(leg1)
 

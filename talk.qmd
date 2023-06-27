@@ -277,12 +277,7 @@ $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
 ::::
 
-## Slumping regime duration, $t_{\rm end}$
-
-[$\bullet$ Dimensionless by settling time $t_{\rm s} = h_{0}/v_{\rm s}$]{.fragment fragment-index=4}
-
-:::: {.columns .v-center-container style="height:70%"}
-::: {.column width=100%}
+## Dimensionless duration, $\tau$
 
 ::: {.r-stack}
 
@@ -306,8 +301,41 @@ $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
 :::
 
+::: {.important}
+
+::: {.r-stack}
+
+[$\tau = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-out fragment-index=1}
+
+[$\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-in fragment-index=1}
+
+[$\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}},\color{orange}{\mathcal{S}}, \theta)$]{.boxed .fragment .fade-in fragment-index=4}
+
 :::
-::::
+
+:::
+
+[$\bullet$ settling dominated: $\tau \propto (\mathcal{S}/a)^{-1} \iff t_{\rm end} \propto h_{0}/v_{\rm s}$]{.fragment fragment-index=7 style="font-size:smaller"}
+
+## Dimensionless duration, $\tau$
+
+::: {.r-stack}
+
+![](talk_files/src/figures/figure_duration_8.svg){width=80% fig-align="center"}
+
+:::
+
+::: {.important}
+
+::: {.r-stack}
+
+[$\require{cancel}\tau = f(\xcancel{\mathcal{R}_{e}}, \color{orange}{\mathcal{S}}, \theta\rightarrow?)$]{.boxed}
+
+:::
+
+:::
+
+[$\bullet$ settling dominated: $\tau \propto (\mathcal{S}/a)^{-1} \iff t_{\rm end} \propto h_{0}/v_{\rm s}$]{style="font-size:smaller"}
 
 ## Mixing and water entrainment
 
@@ -357,10 +385,12 @@ $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 Slumping regime:
 
 - dimensionless velocity $\mathcal{F}_{r}$ increases with $\theta$
-- duration $t_{\rm end}$:
-  - $t_{\rm end} \propto t_{0} = L_{0}/u_{0}$ for $\mathcal{S} < 2.10^{-2}$ 
-  - $t_{\rm end} \propto t_{s} = h_{0}/v_{\rm s}$ for $\mathcal{S} > 2.10^{-2}$ 
+- dimensioless duration $\tau$:
+  - for $\mathcal{S} < 2.10^{-2}$ $\rightarrow$ $\tau \simeq 30$
+  - for $\mathcal{S} > 2.10^{-2}$ $\rightarrow$ $\tau \simeq 0.8 (\mathcal{S}/a)^{-1}$
 - entrainment increases with Reynolds as $E \propto \mathcal{R}_{e}$
+
+[More in: *Slumping regime in lock-release turbidity currents.* Gadal et al. 2023, in review in JFM. *preprint:arXiv2301.00192* ]{style='font-size:smaller'}
 
 :::
 
@@ -376,7 +406,7 @@ What's next ?
 
 - Comparison with depth-averaged models
 - Influence of lock aspect-ratio $h_{0}/L_{0}$ ?
-- $t_{\rm end}(\theta)$, $E(\theta, \mathcal{S})$ ?
+- $\tau(\theta)$, $E(\theta, \mathcal{S})$ ?
 
 </br>
 
@@ -386,6 +416,6 @@ What's next ?
 
 ::::
 
-::: {.fragment style="margin-top:4%"}
+::: {.fragment style="margin-top:2%"}
 ![Steady injection of a water/plastic suspension inside fresh water.](talk_files/src/videos/steady_input/stationnary_turbidity_current.mp4){width=85% fig-align="center"}
 ::: 

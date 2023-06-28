@@ -63,7 +63,7 @@ format:
 ## Lock-release systems
 
 :::: {.columns .v-center-container}
-::: {.column width=100%}
+::: {.column width=100% .rotate}
 
 ![Particles: glass beads ($d \sim 120 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/videos/sand80m/run03/output.mp4){width=85% fig-align="center"}
 
@@ -253,23 +253,64 @@ $$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
 [$\bullet$ Global increasing trend, but scatter across datasets $\rightarrow$ influence of other parameters ? $h_{0}/L_{0}$ ?]{.fragment fragment-index=1}
 
 
-## Influence of settling, $S$
+## Dimensionless duration $\tau$ and influence of $\mathcal{S}$
 
 $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
 :::: {.columns .v-center-container style="height:80%"}
 
-::: {.column width=50%}
+::: {.column width=60%}
 
-![$d \sim 60~\mu$m, $\mathcal{S} = 0.01$](talk_files/src/videos/silibeads40m_70m/run02/output.mp4){width=80% fig-align="center"}
+:::: {.columns .v-center-container}
 
-![$d \sim 135~\mu$m, $\mathcal{S} = 0.04$](talk_files/src/videos/silibeads120m/run02/output.mp4){width=80% fig-align="center"}
+::: {.column width=20% .small}
 
-![$d \sim 250~\mu$m, $\mathcal{S} = 0.1$](talk_files/src/videos/silibeads200m_300m/run02/output.mp4){width=80% fig-align="center"}
+$d \sim 60~\mu$m, $\mathcal{S} = 0.01$
 
 :::
 
-::: {.column width=50%}
+::: {.column width=80% .rotate}
+
+![](talk_files/src/videos/silibeads40m_70m/run02/output.mp4){width=80% fig-align="center"}
+
+:::
+::::
+
+:::: {.columns .v-center-container}
+
+::: {.column width=20% .small}
+
+$d \sim 135~\mu$m, $\mathcal{S} = 0.04$
+
+:::
+
+::: {.column width=80% .rotate}
+
+![](talk_files/src/videos/silibeads120m/run02/output.mp4){width=80% fig-align="center"}
+
+:::
+::::
+
+:::: {.columns .v-center-container style="margin-block-start:0"}
+
+::: {.column width=20% .small}
+
+$d \sim 250~\mu$m
+
+$\mathcal{S} = 0.1$
+
+:::
+
+::: {.column width=80% .rotate}
+
+![](talk_files/src/videos/silibeads200m_300m/run02/output.mp4){width=80% fig-align="center"}
+:::
+::::
+
+
+:::
+
+::: {.column width=40%}
 
 ![](talk_files/src/figures/settling_velocity_nose_propagation.svg){.fragment fragment-index=1 width=100% fig-align="center"}
 
@@ -277,7 +318,7 @@ $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
 ::::
 
-## Dimensionless duration, $\tau$
+## Dimensionless duration $\tau$ and influence of $\mathcal{S}$
 
 ::: {.r-stack}
 
@@ -317,7 +358,7 @@ $\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
 
 [$\bullet$ settling dominated: $\tau \propto (\mathcal{S}/a)^{-1} \iff t_{\rm end} \propto h_{0}/v_{\rm s}$]{.fragment fragment-index=7 style="font-size:smaller"}
 
-## Dimensionless duration, $\tau$
+## Dimensionless duration $\tau$ and influence of $\mathcal{S}$
 
 ::: {.r-stack}
 

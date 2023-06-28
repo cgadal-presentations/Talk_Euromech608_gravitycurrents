@@ -95,3 +95,11 @@ h1.title {
     background-position: left;
     background-size: 200px;
 }
+
+.reveal .slides .rotate video {
+    transform: rotate(-7deg);
+}
+
+.reveal .slides .rotate figcaption {
+    margin-top: 5%
+}

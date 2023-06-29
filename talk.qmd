@@ -346,9 +346,7 @@ $\mathcal{S} = 0.1$
 
 ::: {.r-stack}
 
-[$\tau = f(\mathcal{R}_{e}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-out fragment-index=1}
-
-[$\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-in fragment-index=1}
+[$\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}}, \mathcal{S}, \theta)$]{.boxed .fragment .fade-out fragment-index=4}
 
 [$\require{cancel} \tau = f(\xcancel{\mathcal{R}_{e}},\color{orange}{\mathcal{S}}, \theta)$]{.boxed .fragment .fade-in fragment-index=4}
 
